@@ -19,7 +19,12 @@ namespace ConsoleApplication1
 
         static void WriteSequence(IEnumerable<int> inp)
         {
-            foreach(int i in inp) Console.WriteLine(i);
+            var tmp = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Последовательность: {");
+            foreach(int i in inp) Console.Write(i + ", ");
+            Console.WriteLine("}");
+            Console.ForegroundColor = tmp;
         }
 
         static IEnumerable<int> Sequence(int inp)
